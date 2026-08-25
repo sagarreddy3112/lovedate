@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+:root{font-family:"DM Sans",sans-serif;color:#34202a;background:#fff4f7;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;min-width:320px}
+button,input{font:inherit}
+button{cursor:pointer}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 18px;position:relative;overflow:hidden;background:radial-gradient(circle at 10% 15%,#ffd5e4 0 10%,transparent 31%),radial-gradient(circle at 90% 80%,#d9d5ff 0 7%,transparent 32%),linear-gradient(135deg,#fff8fa,#f8f4ff)}
+.ambient{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;pointer-events:none}
+.a1{width:240px;height:240px;background:#ff9fc0;top:-100px;right:12%}
+.a2{width:180px;height:180px;background:#a89cfb;bottom:-80px;left:5%}
+.a3{width:100px;height:100px;background:#ffd36b;top:20%;left:8%}
+.card{width:min(720px,100%);min-height:600px;background:rgba(255,255,255,.82);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.9);border-radius:34px;box-shadow:0 30px 90px rgba(89,42,73,.16);padding:28px 42px 42px;position:relative;z-index:2}
+.topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.brand{font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:700;color:#b44c70;display:flex;align-items:center;gap:7px}
+.step-count{font-size:12px;color:#9a7d89;font-weight:700}
+.progress{height:5px;background:#f4dfe6;border-radius:99px;overflow:hidden}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,#ff5b89,#8f72ff);border-radius:99px;transition:width .35s ease}
+.hero,.choice-step{text-align:center;padding:50px 4px 10px}
+.hero-icon,.success-heart{width:82px;height:82px;margin:0 auto 24px;border-radius:27px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#ff5c8b,#c66bff);box-shadow:0 15px 35px rgba(225,72,128,.3);transform:rotate(-4deg)}
+.eyebrow{font-size:11px;letter-spacing:.2em;font-weight:800;color:#ba5376}
+h1,h2{font-family:"Playfair Display",serif;color:#351f2a;margin:12px 0}
+h1{font-size:clamp(42px,7vw,66px);line-height:1.02}
+h2{font-size:clamp(34px,5vw,48px)}
+h1 em{color:#e8487a}
+.subtitle{font-size:16px;line-height:1.7;color:#846d78;max-width:500px;margin:16px auto 30px}
+.button-row{height:110px;display:flex;align-items:center;justify-content:center;gap:14px;position:relative}
+.primary{border:0;border-radius:18px;padding:15px 21px;color:white;font-weight:800;background:linear-gradient(135deg,#f45183,#a95ce8);box-shadow:0 12px 28px rgba(210,69,125,.28);display:inline-flex;align-items:center;gap:9px;transition:.2s;min-height:44px}
+.primary:hover{transform:translateY(-2px);box-shadow:0 17px 32px rgba(210,69,125,.35)}
+.no-button{border:1px solid #ead5dc;background:#fff;color:#8f6d79;border-radius:18px;padding:14px 22px;transition:transform .18s ease;min-height:44px}
+.hint,.tiny{font-size:12px;color:#aa8d99}
+.back{border:0;background:transparent;color:#a16f81;display:flex;align-items:center;gap:2px;margin-top:18px;padding:4px}
+.choice-step{padding-top:35px}
+.small-icon{width:54px;height:54px;margin:0 auto 18px;display:grid;place-items:center;color:#d94879;background:#ffe2eb;border-radius:18px}
+.choice-grid{display:grid;gap:12px;text-align:left;margin:25px auto 10px}
+.choice{border:1px solid #f0dce4;background:#fff;border-radius:19px;padding:17px 18px;display:flex;align-items:center;justify-content:space-between;text-align:left;color:#3d2731;transition:.18s}
+.choice:hover,.choice.selected{border-color:#ef7b9d;box-shadow:0 8px 22px rgba(195,77,117,.1);transform:translateY(-1px)}
+.choice b{display:block;font-size:15px}.choice small{display:block;color:#9a7f89;margin-top:4px;font-size:12px}
+.radio{width:26px;height:26px;border-radius:50%;border:2px solid #efd8e1;display:grid;place-items:center;color:white;background:white}
+.selected .radio{background:#ed5b87;border-color:#ed5b87}
+.pill-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px auto}
+.pill{border:1px solid #eddbe2;background:#fff;border-radius:18px;padding:18px;text-align:left;display:flex;align-items:center;justify-content:space-between;color:#4a303b;font-weight:700;transition:.18s}
+.pill:hover,.pill.active{background:linear-gradient(135deg,#fff,#fff0f5);border-color:#ec7598;transform:translateY(-2px);box-shadow:0 10px 25px rgba(196,74,116,.12)}
+.pill svg{color:#cb8aa0}
+.date-input{width:100%;max-width:300px;padding:15px;border:1px solid #edd7df;border-radius:16px;background:white;color:#543440;margin:8px auto}
+.final-btn{margin-top:8px}.final-btn:disabled{opacity:.45;cursor:not-allowed}
+.success-card{text-align:center;display:flex;flex-direction:column;justify-content:center}
+.success-heart{transform:none;color:#fff}
+.success-card h1{font-size:58px}
+.summary{background:#fff;border:1px solid #f0dce4;border-radius:22px;padding:6px 18px;margin:20px auto;max-width:480px;text-align:left}
+.summary div{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #f5e7eb;font-size:14px}.summary div:last-child{border:0}.summary span{font-size:20px}
+footer{position:absolute;bottom:12px;z-index:2;font-size:11px;color:#a78894;letter-spacing:.08em}
+@media(max-width:600px){.card{padding:22px 20px 30px;border-radius:26px;min-height:610px}.hero,.choice-step{padding-top:35px}.pill-grid{grid-template-columns:1fr}.button-row{height:125px;flex-direction:column}.no-button{position:absolute;bottom:2px}.hero-icon{width:70px;height:70px}h1{font-size:43px}.success-card h1{font-size:47px}}
+
+@media (max-width: 600px) {
+  .card { min-height: 540px; padding: 20px; }
+  .button-row { gap: 14px; align-items: center; }
+  .primary, .no-button { width: 100%; padding: 16px; font-size: 16px; border-radius: 14px; }
+  .no-button { position: static; transform: none !important; }
+  .primary:focus, .no-button:focus { outline: 3px solid rgba(201,95,128,0.18); outline-offset: 2px; }
+  .date-picker-wrapper { padding: 18px; }
+}
+
+.welcome-hero .welcome-line{font-family:"Playfair Display",serif;font-size:20px;color:#684450;margin:22px auto 6px}
+.welcome-question{font-size:30px;margin:4px auto 10px;color:#3d2530}
+.welcome-hero .subtitle{margin-bottom:28px}
+.date-picker-wrapper {
+  max-width: 430px;
+  margin: 28px auto 0;
+  padding: 28px;
+  background: linear-gradient(
+    145deg,
+    #fff,
+    #fff1f6
+  );
+  border: 1px solid #f1d9e3;
+  border-radius: 26px;
+  box-shadow:
+    0 15px 40px rgba(190, 70, 110, 0.10);
+}
+
+.date-picker-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    #ff5b89,
+    #a965e8
+  );
+  box-shadow:
+    0 12px 25px rgba(215, 76, 128, 0.25);
+}
+
+.date-label {
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 800;
+  color: #8c6875;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+}
+
+.date-input-large {
+  width: 100%;
+  padding: 17px 16px;
+  border: 2px solid #efd7e0;
+  border-radius: 16px;
+  background: white;
+  color: #3e2731;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.date-input-large:hover,
+.date-input-large:focus {
+  border-color: #ec7195;
+  box-shadow:
+    0 0 0 4px rgba(236, 113, 149, .10);
+}
+
+.selected-date {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  margin-top: 16px;
+  padding: 15px;
+  border-radius: 17px;
+  background: #fff;
+  border: 1px solid #f0dce4;
+}
+
+.selected-date > span {
+  font-size: 25px;
+}
+
+.selected-date small {
+  display: block;
+  color: #b16c80;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin-bottom: 3px;
+}
+
+.selected-date strong {
+  display: block;
+  color: #432832;
+  font-size: 14px;
+}
+
+.date-continue {
+  width: 100%;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.date-continue:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .date-picker-wrapper {
+    padding: 22px 18px;
+  }
+
+  .date-input-large {
+    font-size: 15px;
+  }
+}
